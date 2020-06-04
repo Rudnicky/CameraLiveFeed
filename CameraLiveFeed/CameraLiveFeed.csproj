@@ -137,5 +137,11 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CameraLiveFeed.Resources\CameraLiveFeed.Resources.csproj">
+      <Project>{5457c1d2-ef36-4187-87c2-85becdbe8f5f}</Project>
+      <Name>CameraLiveFeed.Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
