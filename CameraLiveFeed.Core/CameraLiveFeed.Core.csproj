@@ -50,6 +50,8 @@
     <Compile Include="Services\RelayCommand\Base\AsyncCommandBase.cs" />
     <Compile Include="Services\RelayCommand\IAsyncCommand.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Services\LoggerFactory\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

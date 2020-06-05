@@ -36,27 +36,22 @@ namespace CameraLiveFeed.ViewModels
 
         public ICommand TestButtonClickedCommand { get => new AsyncCommand(TestButtonClickedAsync, CanExecute); }
 
+        public MainWindowViewModel(ILogger logger)
+        {
+            _logger = logger;
+        }
+
         private async Task TestButtonClickedAsync()
         {
             IsBusy = true;
 
-            //_logger.Info("TestButtonClickedAsync Entered");
+            _logger.Info("testbuttonclickedasync entered");
 
             await Task.Delay(2000);
 
-            Debug.WriteLine("TestButtonClickedAsync Finished");
+            _logger.Info("TestButtonClickedAsync Finished");
 
             IsBusy = false;
-        }
-
-        //public MainWindowViewModel(ILogger logger)
-        //{
-        //    this._logger = logger;
-        //}
-
-        public MainWindowViewModel()
-        {
-
         }
     }
 }

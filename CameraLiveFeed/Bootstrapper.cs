@@ -1,5 +1,6 @@
 ﻿using Caliburn.Micro;
 using CameraLiveFeed.ViewModels;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace CameraLiveFeed
 {
     public class Bootstrapper : BootstrapperBase
     {
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         private readonly SimpleContainer _container = new SimpleContainer();
 
         public Bootstrapper()
@@ -24,6 +26,8 @@ namespace CameraLiveFeed
                 .Singleton<IWindowManager, WindowManager>()
                 .Singleton<IEventAggregator, EventAggregator>();
 
+            _container.RegisterInstance(typeof(ILogger), "Logger", Logger);
+
             GetType().Assembly.GetTypes()
                 .Where(type => type.IsClass)
                 .Where(type => type.Name.EndsWith("ViewModel"))
@@ -33,6 +37,8 @@ namespace CameraLiveFeed
 
         protected override void OnStartup(object sender, StartupEventArgs e)
         {
+            Logger.Info("Application Started.");
+
             DisplayRootViewFor<MainWindowViewModel>();
         }
 
