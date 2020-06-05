@@ -1,6 +1,7 @@
 ﻿using CameraLiveFeed.Core.Services.RelayCommand;
 using CameraLiveFeed.ViewModels.Base;
 using NLog;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -39,18 +40,23 @@ namespace CameraLiveFeed.ViewModels
         {
             IsBusy = true;
 
-            _logger.Info("TestButtonClickedAsync Entered");
+            //_logger.Info("TestButtonClickedAsync Entered");
 
             await Task.Delay(2000);
 
-            _logger.Info("TestButtonClickedAsync Finished");
+            Debug.WriteLine("TestButtonClickedAsync Finished");
 
             IsBusy = false;
         }
 
-        public MainWindowViewModel(ILogger logger)
+        //public MainWindowViewModel(ILogger logger)
+        //{
+        //    this._logger = logger;
+        //}
+
+        public MainWindowViewModel()
         {
-            this._logger = logger;
+
         }
     }
 }
