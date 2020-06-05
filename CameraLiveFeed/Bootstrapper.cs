@@ -39,7 +39,7 @@ namespace CameraLiveFeed
         {
             Logger.Info("Application Started.");
 
-            DisplayRootViewFor<MainWindowViewModel>();
+            DisplayRootViewFor<ShellViewModel>();
         }
 
         protected override object GetInstance(Type service, string key)

@@ -3,11 +3,11 @@
 namespace CameraLiveFeed.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindowView.xaml
+    /// Interaction logic for ShellView.xaml
     /// </summary>
-    public partial class MainWindowView : Window
+    public partial class ShellView : Window
     {
-        public MainWindowView()
+        public ShellView()
         {
             InitializeComponent();
         }

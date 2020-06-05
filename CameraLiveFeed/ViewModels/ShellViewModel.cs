@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace CameraLiveFeed.ViewModels
 {
-    public class MainWindowViewModel : BaseViewModel
+    public class ShellViewModel : BaseViewModel
     {
         private readonly ILogger _logger;
 
@@ -35,7 +35,7 @@ namespace CameraLiveFeed.ViewModels
 
         public ICommand TestButtonClickedCommand { get => new AsyncCommand(TestButtonClickedAsync, CanExecute); }
 
-        public MainWindowViewModel(ILogger logger)
+        public ShellViewModel(ILogger logger)
         {
             _logger = logger;
         }
