@@ -1,5 +1,6 @@
 ﻿using CameraLiveFeed.ViewModels;
 using CameraLiveFeed.Views;
+using System;
 using System.Windows;
 
 namespace CameraLiveFeed
@@ -9,9 +10,13 @@ namespace CameraLiveFeed
     /// </summary>
     public partial class App : Application
     {
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
+            
+            Logger.Info("Application Started");
 
             InitializeAutofacContainer();
 
@@ -25,7 +30,7 @@ namespace CameraLiveFeed
 
         private void InitializeStartupWindow()
         {
-            var mainWindowViewModel = new MainWindowViewModel();
+            var mainWindowViewModel = new MainWindowViewModel(Logger);
             var mainWindow = new MainWindow
             {
                 DataContext = mainWindowViewModel

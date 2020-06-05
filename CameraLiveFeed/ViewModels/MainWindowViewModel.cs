@@ -1,6 +1,6 @@
 ﻿using CameraLiveFeed.Core.Services.RelayCommand;
 using CameraLiveFeed.ViewModels.Base;
-using System.Diagnostics;
+using NLog;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -9,6 +9,8 @@ namespace CameraLiveFeed.ViewModels
 {
     public class MainWindowViewModel : BaseViewModel
     {
+        private readonly ILogger _logger;
+
         private Visibility _isMediaPlayerViewVisible = Visibility.Hidden;
         public Visibility IsMediaPlayerViewVisible
         {
@@ -37,18 +39,18 @@ namespace CameraLiveFeed.ViewModels
         {
             IsBusy = true;
 
-            Debug.WriteLine("TestButtonClickedAsync Entered");
+            _logger.Info("TestButtonClickedAsync Entered");
 
             await Task.Delay(2000);
 
-            Debug.WriteLine("TestButtonClickedAsync Finished");
+            _logger.Info("TestButtonClickedAsync Finished");
 
             IsBusy = false;
         }
 
-        public MainWindowViewModel()
+        public MainWindowViewModel(ILogger logger)
         {
-
+            this._logger = logger;
         }
     }
 }
