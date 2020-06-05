@@ -1,7 +1,6 @@
 ﻿using CameraLiveFeed.Core.Services.RelayCommand;
 using CameraLiveFeed.ViewModels.Base;
 using NLog;
-using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -12,7 +11,7 @@ namespace CameraLiveFeed.ViewModels
     {
         private readonly ILogger _logger;
 
-        private Visibility _isMediaPlayerViewVisible = Visibility.Hidden;
+        private Visibility _isMediaPlayerViewVisible = Visibility.Visible;
         public Visibility IsMediaPlayerViewVisible
         {
             get => _isMediaPlayerViewVisible;

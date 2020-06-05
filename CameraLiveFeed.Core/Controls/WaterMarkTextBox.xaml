@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="CameraLiveFeed.Core.Controls.WaterMarkTextBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:b="clr-namespace:CameraLiveFeed.Core.Behaviors"
+             xmlns:local="clr-namespace:CameraLiveFeed.Core.Controls"
+             mc:Ignorable="d" 
+             x:Name="Root"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <AdornerDecorator>
+            <TextBox
+                Name="txtBox"
+                HorizontalContentAlignment="Left"
+                VerticalContentAlignment="Center"
+                Background="{DynamicResource Common.TextBox.Background}"
+                Style="{DynamicResource RoundedTextBoxStyle}"
+                Text="{Binding Text, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}, UpdateSourceTrigger=PropertyChanged}">
+                <b:WatermarkBehavior.Watermark>
+                    <TextBlock
+                        x:Name="txtBlock"
+                        Margin="4,0,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        FontFamily="Cambria"
+                        FontSize="12"
+                        Foreground="{DynamicResource Common.Foreground.Watermark}"
+                        Text="{Binding HintText, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}" />
+                </b:WatermarkBehavior.Watermark>
+            </TextBox>
+        </AdornerDecorator>
+    </Grid>
+</UserControl>

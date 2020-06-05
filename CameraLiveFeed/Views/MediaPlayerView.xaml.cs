@@ -1,5 +1,4 @@
-﻿using CameraLiveFeed.ViewModels;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 
 namespace CameraLiveFeed.Views
 {
@@ -11,13 +10,6 @@ namespace CameraLiveFeed.Views
         public MediaPlayerView()
         {
             InitializeComponent();
-
-            InitializeDataContext();
-        }
-
-        private void InitializeDataContext()
-        {
-            this.DataContext = new MediaPlayerViewModel();
         }
     }
 }
