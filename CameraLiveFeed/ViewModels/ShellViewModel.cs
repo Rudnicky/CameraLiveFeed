@@ -15,22 +15,7 @@ namespace CameraLiveFeed.ViewModels
         public Visibility IsMediaPlayerViewVisible
         {
             get => _isMediaPlayerViewVisible;
-            set
-            {
-                _isMediaPlayerViewVisible = value;
-                OnPropertyChanged(nameof(IsMediaPlayerViewVisible));
-            }
-        }
-
-        private string _buttonTextTest = "Test Test Test";
-        public string ButtonTextTest
-        {
-            get => _buttonTextTest;
-            set
-            {
-                _buttonTextTest = value;
-                OnPropertyChanged(nameof(ButtonTextTest));
-            }
+            set => SetProperty(ref _isMediaPlayerViewVisible, value);
         }
 
         public ICommand TestButtonClickedCommand { get => new AsyncCommand(TestButtonClickedAsync, CanExecute); }
