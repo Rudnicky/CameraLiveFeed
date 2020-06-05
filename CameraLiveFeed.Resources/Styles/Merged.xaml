@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/CameraLiveFeed.Resources;component/Styles/Brushes.xaml" />
+        <ResourceDictionary Source="/CameraLiveFeed.Resources;component/Styles/Values.xaml" />
         <ResourceDictionary Source="/CameraLiveFeed.Resources;component/Styles/Styles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

@@ -1,5 +1,4 @@
-﻿using CameraLiveFeed.ViewModels;
-using System.Windows;
+﻿using System.Windows;
 
 namespace CameraLiveFeed.Views
 {
@@ -11,12 +10,6 @@ namespace CameraLiveFeed.Views
         public MainWindow()
         {
             InitializeComponent();
-            InitializeDataContext();
-        }
-
-        private void InitializeDataContext()
-        {
-            this.DataContext = new MainWindowViewModel();
         }
     }
 }

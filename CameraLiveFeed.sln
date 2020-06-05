@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CameraLiveFeed", "CameraLiv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CameraLiveFeed.Resources", "CameraLiveFeed.Resources\CameraLiveFeed.Resources.csproj", "{5457C1D2-EF36-4187-87C2-85BECDBE8F5F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CameraLiveFeed.Core", "CameraLiveFeed.Core\CameraLiveFeed.Core.csproj", "{2793F1DB-D28C-443B-9D16-97A0BDF3DD00}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5457C1D2-EF36-4187-87C2-85BECDBE8F5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5457C1D2-EF36-4187-87C2-85BECDBE8F5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5457C1D2-EF36-4187-87C2-85BECDBE8F5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2793F1DB-D28C-443B-9D16-97A0BDF3DD00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2793F1DB-D28C-443B-9D16-97A0BDF3DD00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2793F1DB-D28C-443B-9D16-97A0BDF3DD00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2793F1DB-D28C-443B-9D16-97A0BDF3DD00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
