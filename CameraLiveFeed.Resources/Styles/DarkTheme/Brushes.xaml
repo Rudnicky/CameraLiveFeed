@@ -1,0 +1,45 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="Application.TitleBar.Background">#282828</SolidColorBrush>
+    <SolidColorBrush x:Key="Application.TitleBar.BorderBrush">#222222</SolidColorBrush>
+    <SolidColorBrush x:Key="Application.Background">#333333</SolidColorBrush>
+    <SolidColorBrush x:Key="Application.Foreground">#f0f8ff</SolidColorBrush>
+
+    <SolidColorBrush x:Key="Common.Application.Background">#424242</SolidColorBrush>
+    <SolidColorBrush x:Key="Common.Application.BorderBrush">#EEEEEE</SolidColorBrush>
+    <SolidColorBrush x:Key="Common.Application.Foreground">#F5F5F5</SolidColorBrush>
+
+    <SolidColorBrush x:Key="Common.TextBox.Foreground">#EEEEEE</SolidColorBrush>
+    <SolidColorBrush x:Key="Common.TextBox.Background">#616161</SolidColorBrush>
+    <SolidColorBrush x:Key="Common.TextBox.BorderBrush">#616161</SolidColorBrush>
+    <SolidColorBrush x:Key="Common.TextBox.CaretBrush">#EEEEEE</SolidColorBrush>
+    <SolidColorBrush x:Key="Common.TextBox.Background.MouseOver">#757575</SolidColorBrush>
+    <SolidColorBrush x:Key="Common.TextBox.Background.Focused">#757575</SolidColorBrush>
+    <SolidColorBrush x:Key="Common.TextBox.BorderBrush.MouseOver">#616161</SolidColorBrush>
+    <SolidColorBrush x:Key="Common.TextBox.BorderBrush.Focused">#616161</SolidColorBrush>
+
+    <SolidColorBrush x:Key="Common.Button.Background">#545454</SolidColorBrush>
+    <SolidColorBrush x:Key="Common.Button.BorderBrush">#9E9E9E</SolidColorBrush>
+    <SolidColorBrush x:Key="Common.Button.Foreground">#EEEEEE</SolidColorBrush>
+    <SolidColorBrush x:Key="Common.Button.Background.MouseOver">#616161</SolidColorBrush>
+    <SolidColorBrush x:Key="Common.Button.Background.Disabled">#494949</SolidColorBrush>
+    <SolidColorBrush x:Key="Common.Button.BorderBrush.Disabled">#757575</SolidColorBrush>
+
+    <SolidColorBrush x:Key="Common.ListView.Background">#616161</SolidColorBrush>
+    <SolidColorBrush x:Key="Common.ListView.BorderBrush">#616161</SolidColorBrush>
+    <SolidColorBrush x:Key="Common.ListView.Header.Background">#616161</SolidColorBrush>
+    <SolidColorBrush x:Key="Common.ListView.Header.BorderBrush">#000000</SolidColorBrush>
+    <SolidColorBrush x:Key="Common.ListViewItem.Background.MouseOver">Transparent</SolidColorBrush>
+
+    <SolidColorBrush x:Key="Common.Calendar.Background">#616161</SolidColorBrush>
+    <SolidColorBrush x:Key="Common.Calendar.BorderBrush">Transparent</SolidColorBrush>
+    <SolidColorBrush x:Key="Common.Calendar.Foreground">#EEEEEE</SolidColorBrush>
+
+    <SolidColorBrush x:Key="Common.Foreground.Disabled">#757575</SolidColorBrush>
+    <SolidColorBrush x:Key="Common.Foreground.Watermark">#BDBDBD</SolidColorBrush>
+    <SolidColorBrush x:Key="Common.BorderBrush.Validation.Error">#E53935</SolidColorBrush>
+
+    <SolidColorBrush x:Key="TextBlock.Underline.Foreground">#2196F3</SolidColorBrush>
+    <SolidColorBrush x:Key="TextBlock.Underline.Foreground.MouseOver">#42A5F5</SolidColorBrush>
+    
+</ResourceDictionary>
