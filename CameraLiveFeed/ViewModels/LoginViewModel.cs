@@ -1,6 +1,7 @@
 ﻿using CameraLiveFeed.Core.Services.LoggerFactory;
 using CameraLiveFeed.Core.Services.RelayCommand;
 using CameraLiveFeed.ViewModels.Base;
+using CameraLiveFeed.Views;
 using Prism.Regions;
 using System;
 using System.Threading.Tasks;
@@ -64,7 +65,7 @@ namespace CameraLiveFeed.ViewModels
 
             try
             {
-                throw new Exception();
+                RegionManager.RequestNavigate("ContentRegion", nameof(RootPanelView));
             }
             catch (Exception ex)
             {
