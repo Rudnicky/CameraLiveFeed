@@ -2,5 +2,5 @@
 
     <core:Double x:Key="Application.Width">800</core:Double>
     <core:Double x:Key="Application.Height">600</core:Double>
-    
+
 </ResourceDictionary>

@@ -23,7 +23,7 @@
                         Margin="4,0,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Center"
-                        FontFamily="Cambria"
+                        FontFamily="{StaticResource MontserratRegular}"
                         FontSize="12"
                         Foreground="{DynamicResource Common.Foreground.Watermark}"
                         Text="{Binding HintText, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}" />

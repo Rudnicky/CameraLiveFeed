@@ -12,7 +12,6 @@
              mc:Ignorable="d">
     <StackPanel VerticalAlignment="Center">
         <Image Margin="0,0,0,20" Style="{DynamicResource LogoImageStyle}" />
-
         <StackPanel Width="280"
                     Height="35"
                     Margin="0,0,30,0"
