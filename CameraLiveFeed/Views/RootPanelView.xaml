@@ -1,6 +1,7 @@
 ﻿<UserControl x:Class="CameraLiveFeed.Views.RootPanelView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:c="clr-namespace:CameraLiveFeed.Core.Controls;assembly=CameraLiveFeed.Core"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:prism="http://prismlibrary.com/"
@@ -19,8 +20,12 @@
                 DockPanel.Dock="Top" />
         <Border Height="50"
                 VerticalAlignment="Bottom"
-                Background="CadetBlue"
-                DockPanel.Dock="Bottom" />
+                Background="Black"
+                DockPanel.Dock="Bottom">
+            <c:FooterView Copyright="Copyright 2020r." Margin="20,0,20,0"
+                          PoweredBy="PoweredBy Griff Software"
+                          Version="1.0v" />
+        </Border>
         <Border Width="200"
                 HorizontalAlignment="Left"
                 Background="Green"

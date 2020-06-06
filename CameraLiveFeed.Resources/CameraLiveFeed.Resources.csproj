@@ -87,5 +87,8 @@
     <Resource Include="Fonts\Montserrat-Bold.ttf" />
     <Resource Include="Fonts\Montserrat-Regular.ttf" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\copyright.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

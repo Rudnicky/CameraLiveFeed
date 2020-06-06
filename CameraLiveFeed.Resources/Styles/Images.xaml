@@ -3,5 +3,6 @@
     <BitmapImage x:Key="LogoImage" UriSource="/CameraLiveFeed.Resources;component/Images/anchor.png" />
     <BitmapImage x:Key="UserAvatarImage" UriSource="/CameraLiveFeed.Resources;component/Images/user.png" />
     <BitmapImage x:Key="PasswordLockImage" UriSource="/CameraLiveFeed.Resources;component/Images/password.png" />
+    <BitmapImage x:Key="CopyrightImage" UriSource="/CameraLiveFeed.Resources;component/Images/copyright.png" />
 
 </ResourceDictionary>

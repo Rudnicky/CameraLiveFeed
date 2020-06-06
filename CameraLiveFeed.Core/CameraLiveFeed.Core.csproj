@@ -58,6 +58,9 @@
     <Compile Include="Behaviors\MouseBehavior.cs" />
     <Compile Include="Behaviors\PasswordBoxWatermark.cs" />
     <Compile Include="Behaviors\WatermarkBehavior.cs" />
+    <Compile Include="Controls\FooterView.xaml.cs">
+      <DependentUpon>FooterView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\WaterMarkTextBox.xaml.cs">
       <DependentUpon>WaterMarkTextBox.xaml</DependentUpon>
     </Compile>
@@ -71,6 +74,10 @@
     <Compile Include="Services\RelayCommand\RelayCommand.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Controls\FooterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Controls\WaterMarkTextBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
