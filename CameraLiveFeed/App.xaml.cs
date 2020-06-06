@@ -1,5 +1,5 @@
-﻿using CameraLiveFeed.Views;
-using NLog;
+﻿using CameraLiveFeed.Core.Services.LoggerFactory;
+using CameraLiveFeed.Views;
 using Prism.Ioc;
 using Prism.Unity;
 using System.Windows;
@@ -11,8 +11,6 @@ namespace CameraLiveFeed
     /// </summary>
     public partial class App : PrismApplication
     {
-        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
-
         protected override Window CreateShell()
         {
             return Container.Resolve<ShellView>();
@@ -20,7 +18,7 @@ namespace CameraLiveFeed
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterInstance(typeof(ILogger), Logger);
+            containerRegistry.Register<ILogger, Logger>();
 
             containerRegistry.RegisterForNavigation<CameraFinderView>();
             containerRegistry.RegisterForNavigation<MediaPlayerView>();

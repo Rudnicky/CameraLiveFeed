@@ -1,18 +1,14 @@
-﻿using CameraLiveFeed.ViewModels.Base;
+﻿using CameraLiveFeed.Core.Services.LoggerFactory;
+using CameraLiveFeed.ViewModels.Base;
+using Prism.Regions;
 
 namespace CameraLiveFeed.ViewModels
 {
     public class MediaPlayerViewModel : BaseViewModel
     {
-        private string _cameraUrl;
-        public string CameraUrl
+        public MediaPlayerViewModel(ILogger logger, IRegionManager regionManager) 
+            : base(logger, regionManager)
         {
-            get => _cameraUrl;
-            set
-            {
-                _cameraUrl = value;
-                OnPropertyChanged(nameof(CameraUrl));
-            }
         }
     }
 }
