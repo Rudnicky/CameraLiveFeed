@@ -57,6 +57,7 @@
     <Compile Include="Services\RelayCommand\AsyncCommand.cs" />
     <Compile Include="Services\RelayCommand\Base\AsyncCommandBase.cs" />
     <Compile Include="Services\RelayCommand\IAsyncCommand.cs" />
+    <Compile Include="Services\RelayCommand\RelayCommand.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Controls\WaterMarkTextBox.xaml">
