@@ -8,35 +8,33 @@
              d:DesignWidth="800"
              prism:ViewModelLocator.AutoWireViewModel="True"
              mc:Ignorable="d">
-    <Grid>
-        <DockPanel Name="dockPanel"
-                   HorizontalAlignment="Stretch"
-                   VerticalAlignment="Stretch"
-                   Background="Coral"
-                   LastChildFill="True">
-            <Border Height="50"
-                    VerticalAlignment="Top"
-                    Background="CadetBlue"
-                    DockPanel.Dock="Top" />
-            <Border Height="50"
-                    VerticalAlignment="Bottom"
-                    Background="CadetBlue"
-                    DockPanel.Dock="Bottom" />
-            <Border Width="200"
-                    HorizontalAlignment="Left"
-                    Background="Green"
-                    DockPanel.Dock="Left" />
-            <Border Background="Salmon">
-                <ScrollViewer HorizontalAlignment="Stretch"
-                              VerticalAlignment="Stretch"
-                              VerticalScrollBarVisibility="Auto">
-                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <ContentControl HorizontalAlignment="Stretch"
-                                        VerticalAlignment="Stretch"
-                                        prism:RegionManager.RegionName="MainRegion" />
-                    </StackPanel>
-                </ScrollViewer>
-            </Border>
-        </DockPanel>
-    </Grid>
+    <DockPanel Name="dockPanel"
+               HorizontalAlignment="Stretch"
+               VerticalAlignment="Stretch"
+               Background="Coral"
+               LastChildFill="True">
+        <Border Height="50"
+                VerticalAlignment="Top"
+                Background="CadetBlue"
+                DockPanel.Dock="Top" />
+        <Border Height="50"
+                VerticalAlignment="Bottom"
+                Background="CadetBlue"
+                DockPanel.Dock="Bottom" />
+        <Border Width="200"
+                HorizontalAlignment="Left"
+                Background="Green"
+                DockPanel.Dock="Left" />
+        <Border Background="Salmon">
+            <ScrollViewer HorizontalAlignment="Stretch"
+                          VerticalAlignment="Stretch"
+                          VerticalScrollBarVisibility="Auto">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <ContentControl HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Stretch"
+                                    prism:RegionManager.RegionName="MainRegion" />
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+    </DockPanel>
 </UserControl>
