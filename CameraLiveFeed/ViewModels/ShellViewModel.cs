@@ -1,8 +1,9 @@
 ﻿using CameraLiveFeed.Core.Services.RelayCommand;
 using CameraLiveFeed.ViewModels.Base;
+using CameraLiveFeed.Views;
 using NLog;
+using Prism.Regions;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Input;
 
 namespace CameraLiveFeed.ViewModels
@@ -10,19 +11,14 @@ namespace CameraLiveFeed.ViewModels
     public class ShellViewModel : BaseViewModel
     {
         private readonly ILogger _logger;
-
-        private Visibility _isMediaPlayerViewVisible = Visibility.Visible;
-        public Visibility IsMediaPlayerViewVisible
-        {
-            get => _isMediaPlayerViewVisible;
-            set => SetProperty(ref _isMediaPlayerViewVisible, value);
-        }
+        private readonly IRegionManager _regionManager;
 
         public ICommand TestButtonClickedCommand { get => new AsyncCommand(TestButtonClickedAsync, CanExecute); }
 
-        public ShellViewModel(ILogger logger)
+        public ShellViewModel(ILogger logger, IRegionManager regionManager)
         {
             _logger = logger;
+            _regionManager = regionManager;
         }
 
         private async Task TestButtonClickedAsync()
@@ -31,7 +27,11 @@ namespace CameraLiveFeed.ViewModels
 
             _logger.Info("testbuttonclickedasync entered");
 
-            await Task.Delay(2000);
+            // simulate some work
+            await Task.Delay(500);
+
+            // navigate to another view
+            _regionManager.RequestNavigate("ContentRegion", nameof(CameraFinderView));
 
             _logger.Info("TestButtonClickedAsync Finished");
 

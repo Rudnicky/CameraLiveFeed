@@ -21,6 +21,9 @@ namespace CameraLiveFeed
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterInstance(typeof(ILogger), Logger);
+
+            containerRegistry.RegisterForNavigation<CameraFinderView>();
+            containerRegistry.RegisterForNavigation<MediaPlayerView>();
         }
     }
 }
