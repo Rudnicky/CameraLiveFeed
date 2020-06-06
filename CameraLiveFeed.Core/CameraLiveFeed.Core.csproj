@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Adorners\WatermarkAdorner.cs" />
     <Compile Include="AttachedProperties\PasswordBoxAssistant.cs" />
+    <Compile Include="Behaviors\MouseBehavior.cs" />
     <Compile Include="Behaviors\PasswordBoxWatermark.cs" />
     <Compile Include="Behaviors\WatermarkBehavior.cs" />
     <Compile Include="Controls\WaterMarkTextBox.xaml.cs">

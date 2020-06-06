@@ -1,5 +1,6 @@
 ﻿using CameraLiveFeed.Core.Services.RelayCommand;
 using CameraLiveFeed.ViewModels.Base;
+using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -31,6 +32,7 @@ namespace CameraLiveFeed.ViewModels
         public ICommand LoginButtonClickedCommand { get => new AsyncCommand(LoginButtonClickedAsync, CanExecute); }
         public ICommand WatermarkTextChangedCommand { get => new RelayCommand(WatermarkTextChanged, CanExecute); }
         public ICommand PasswordChangedCommand { get => new RelayCommand(PasswordChanged, CanExecute); }
+        public ICommand ForgotPasswordMouseDownCommand { get => new RelayCommand(ForgotPasswordMouseDown, CanExecute); }
 
         private void WatermarkTextChanged()
         {
@@ -40,6 +42,11 @@ namespace CameraLiveFeed.ViewModels
         private void PasswordChanged()
         {
             IsLoginButtonEnabled = !string.IsNullOrWhiteSpace(Username) && !string.IsNullOrWhiteSpace(Password);
+        }
+
+        private void ForgotPasswordMouseDown()
+        {
+            // TODO: add logic when user wants to recover a password
         }
 
         private async Task LoginButtonClickedAsync()

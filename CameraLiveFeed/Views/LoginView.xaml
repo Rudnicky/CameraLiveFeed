@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:ap="clr-namespace:CameraLiveFeed.Core.AttachedProperties;assembly=CameraLiveFeed.Core"
              xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:b="clr-namespace:CameraLiveFeed.Core.Behaviors;assembly=CameraLiveFeed.Core"
              xmlns:controls="clr-namespace:CameraLiveFeed.Core.Controls;assembly=CameraLiveFeed.Core"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -51,6 +52,7 @@
                        HorizontalAlignment="Right"
                        VerticalAlignment="Center"
                        Style="{DynamicResource UnderlineTextBlockStyle}"
+                       b:MouseBehaviour.MouseDownCommand="{Binding ForgotPasswordMouseDownCommand}"
                        Text="Forgot your password?" />
         </StackPanel>
         <Button Width="250"
