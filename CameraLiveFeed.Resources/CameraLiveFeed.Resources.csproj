@@ -58,6 +58,10 @@
     <Page Include="Styles\Merged.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Styles\Images.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Styles\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -66,6 +70,18 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CameraLiveFeed.Core\CameraLiveFeed.Core.csproj">
+      <Project>{2793f1db-d28c-443b-9d16-97a0bdf3dd00}</Project>
+      <Name>CameraLiveFeed.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\anchor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\password.png" />
+    <Resource Include="Images\user.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -3,7 +3,9 @@ using CameraLiveFeed.ViewModels.Base;
 using CameraLiveFeed.Views;
 using NLog;
 using Prism.Regions;
+using System;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace CameraLiveFeed.ViewModels
@@ -14,11 +16,17 @@ namespace CameraLiveFeed.ViewModels
         private readonly IRegionManager _regionManager;
 
         public ICommand TestButtonClickedCommand { get => new AsyncCommand(TestButtonClickedAsync, CanExecute); }
+        public ICommand ShellWindowLoadedCommand { get => new AsyncCommand(ShellWindowLoadedAsync, CanExecute); }
 
         public ShellViewModel(ILogger logger, IRegionManager regionManager)
         {
             _logger = logger;
             _regionManager = regionManager;
+        }
+
+        private async Task ShellWindowLoadedAsync()
+        {
+            _regionManager.RequestNavigate("ContentRegion", nameof(LoginView));
         }
 
         private async Task TestButtonClickedAsync()

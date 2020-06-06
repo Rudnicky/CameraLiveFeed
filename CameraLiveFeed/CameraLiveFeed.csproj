@@ -53,8 +53,17 @@
     <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.2.0.4\lib\net47\CommonServiceLocator.dll</HintPath>
     </Reference>
+    <Reference Include="FFImageLoading, Version=2.4.11.982, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.4.11.982\lib\netstandard1.0\FFImageLoading.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Platform, Version=2.4.11.982, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.4.11.982\lib\netstandard1.0\FFImageLoading.Platform.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.19\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
     </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>..\packages\NLog.4.7.2\lib\net45\NLog.dll</HintPath>
@@ -111,15 +120,23 @@
     </ApplicationDefinition>
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
     <Compile Include="ViewModels\CameraFinderViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="ViewModels\MediaPlayerViewModel.cs" />
     <Compile Include="Views\CameraFinderView.xaml.cs">
       <DependentUpon>CameraFinderView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MediaPlayerView.xaml.cs">
       <DependentUpon>MediaPlayerView.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\CameraFinderView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoginView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

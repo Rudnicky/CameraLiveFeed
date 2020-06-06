@@ -3,5 +3,6 @@
         <ResourceDictionary Source="/CameraLiveFeed.Resources;component/Styles/DarkTheme/Brushes.xaml" />
         <ResourceDictionary Source="/CameraLiveFeed.Resources;component/Styles/Values.xaml" />
         <ResourceDictionary Source="/CameraLiveFeed.Resources;component/Styles/Styles.xaml" />
+        <ResourceDictionary Source="/CameraLiveFeed.Resources;component/Styles/Images.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
