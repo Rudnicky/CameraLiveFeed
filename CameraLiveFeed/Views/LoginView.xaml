@@ -3,14 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:ap="clr-namespace:CameraLiveFeed.Core.AttachedProperties;assembly=CameraLiveFeed.Core"
              xmlns:controls="clr-namespace:CameraLiveFeed.Core.Controls;assembly=CameraLiveFeed.Core"
+             xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:prism="http://prismlibrary.com/"
              Width="800"
              Height="450"
+             x:Name="loginView"
              prism:ViewModelLocator.AutoWireViewModel="True"
              mc:Ignorable="d">
-    <StackPanel VerticalAlignment="Center">
+    <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Image Margin="0,0,0,20" Style="{DynamicResource LogoImageStyle}" />
         <StackPanel Width="280"
                     Height="35"
@@ -22,7 +24,7 @@
                    Margin="2,0,11,0"
                    Source="{DynamicResource UserAvatarImage}"
                    Style="{DynamicResource LoginImageStyle}" />
-            <controls:WaterMarkTextBox Width="250" HintText="Username" />
+            <controls:WaterMarkTextBox Width="250" HintText="Username" TextChangedCommand="{Binding WatermarkTextChangedCommand}" />
         </StackPanel>
         <StackPanel Width="280"
                     Margin="0,20,30,0"
@@ -44,6 +46,8 @@
         </StackPanel>
         <Button Width="250"
                 Height="35"
+                IsEnabled="{Binding IsLoginButtonEnabled}"
+                Command="{Binding LoginButtonClickedCommand}"
                 Margin="0,20,0,0"
                 Content="Login" />
     </StackPanel>

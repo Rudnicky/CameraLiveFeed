@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace CameraLiveFeed.Core.Controls
 {
@@ -30,6 +31,15 @@ namespace CameraLiveFeed.Core.Controls
         public static readonly DependencyProperty HintTextProperty =
             DependencyProperty.Register("HintText", typeof(string), typeof(WaterMarkTextBox),
                 new PropertyMetadata(string.Empty, new PropertyChangedCallback(HintTextPropertyChanged)));
+
+        public ICommand TextChangedCommand
+        {
+            get { return (ICommand)GetValue(TextChangedCommandProperty); }
+            set { SetValue(TextChangedCommandProperty, value); }
+        }
+
+        public static readonly DependencyProperty TextChangedCommandProperty =
+            DependencyProperty.Register(nameof(TextChangedCommand), typeof(ICommand), typeof(WaterMarkTextBox), new UIPropertyMetadata(null));
         #endregion
 
         #region Ctor
@@ -49,6 +59,11 @@ namespace CameraLiveFeed.Core.Controls
         private void OnHintTextPropertyChanged(DependencyPropertyChangedEventArgs e)
         {
             this.txtBlock.Text = e.NewValue.ToString();
+        }
+
+        private void TxtBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextChangedCommand?.Execute(sender);
         }
         #endregion
 
