@@ -32,9 +32,36 @@ namespace CameraLiveFeed.ViewModels
             set => SetProperty(ref _password, value);
         }
 
+        private bool _isWaterMarkFocused;
+        public bool IsWaterMarkFocused
+        {
+            get => _isWaterMarkFocused;
+            set => SetProperty(ref _isWaterMarkFocused, value);
+        }
+
+        private bool _isPasswordBoxFocused;
+        public bool IsPasswordBoxFocused
+        {
+            get => _isPasswordBoxFocused;
+            set => SetProperty(ref _isPasswordBoxFocused, value);
+        }
+
+        private bool _isLoginButtonFocused;
+        public bool IsLoginButtonFocused
+        {
+            get => _isLoginButtonFocused;
+            set => SetProperty(ref _isLoginButtonFocused, value);
+        }
+
         public ICommand LoginButtonClickedCommand { get => new AsyncCommand(LoginButtonClickedAsync, CanExecute); }
+        public ICommand LoginViewLoadedCommand { get => new RelayCommand(LoginViewLoaded, CanExecute); }
+        public ICommand LoginButtonLostFocusCommand { get => new RelayCommand(LoginButtonLostFocus); }
         public ICommand WatermarkTextChangedCommand { get => new RelayCommand(WatermarkTextChanged, CanExecute); }
+        public ICommand WatermarkEnterKeyPressedCommand { get => new RelayCommand(WatermarkEnterKeyPressed); }
+        public ICommand WatermarkLostFocusCommand { get => new RelayCommand(WatermarkLostFocus); }
         public ICommand PasswordChangedCommand { get => new RelayCommand(PasswordChanged, CanExecute); }
+        public ICommand PasswordEnterKeyPressedCommand { get => new RelayCommand(PasswordEnterKeyPressed); }
+        public ICommand PasswordBoxLostFocusCommand { get => new RelayCommand(PasswordBoxLostFocus); }
         public ICommand ForgotPasswordMouseDownCommand { get => new RelayCommand(ForgotPasswordMouseDown, CanExecute); }
 
         public LoginViewModel(ILogger logger, IRegionManager regionManager)
@@ -57,6 +84,35 @@ namespace CameraLiveFeed.ViewModels
             // TODO: add logic when user wants to recover a password
         }
 
+        private void WatermarkEnterKeyPressed()
+        {
+            IsWaterMarkFocused = false;
+            IsPasswordBoxFocused = true;
+            IsLoginButtonFocused = false;
+        }
+
+        private void PasswordEnterKeyPressed()
+        {
+            IsWaterMarkFocused = false;
+            IsPasswordBoxFocused = false;
+            IsLoginButtonFocused = true;
+        }
+
+        private void PasswordBoxLostFocus()
+        {
+            IsPasswordBoxFocused = false;
+        }
+
+        private void LoginButtonLostFocus()
+        {
+            IsLoginButtonFocused = false;
+        }
+
+        private void WatermarkLostFocus()
+        {
+            IsWaterMarkFocused = false;
+        }
+
         private async Task LoginButtonClickedAsync()
         {
             Logger.ProcessStarted(nameof(LoginButtonClickedAsync));
@@ -75,6 +131,11 @@ namespace CameraLiveFeed.ViewModels
             Logger.ProcessEnded(nameof(LoginButtonClickedAsync));
 
             IsBusy = false;
+        }
+
+        private void LoginViewLoaded()
+        {
+            IsWaterMarkFocused = true;
         }
     }
 }

@@ -2,8 +2,8 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:ap="clr-namespace:CameraLiveFeed.Core.AttachedProperties;assembly=CameraLiveFeed.Core"
-             xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
              xmlns:b="clr-namespace:CameraLiveFeed.Core.Behaviors;assembly=CameraLiveFeed.Core"
+             xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
              xmlns:controls="clr-namespace:CameraLiveFeed.Core.Controls;assembly=CameraLiveFeed.Core"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -13,6 +13,11 @@
              Height="450"
              prism:ViewModelLocator.AutoWireViewModel="True"
              mc:Ignorable="d">
+    <behaviors:Interaction.Triggers>
+        <behaviors:EventTrigger EventName="Loaded" SourceObject="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}">
+            <behaviors:InvokeCommandAction Command="{Binding LoginViewLoadedCommand}" />
+        </behaviors:EventTrigger>
+    </behaviors:Interaction.Triggers>
     <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Image Margin="0,0,0,20" Style="{DynamicResource LogoImageStyle}" />
         <StackPanel Width="280"
@@ -26,9 +31,15 @@
                    Source="{DynamicResource UserAvatarImage}"
                    Style="{DynamicResource LoginImageStyle}" />
             <controls:WaterMarkTextBox Width="250"
+                                       b:LostFocusBehaviour.LostFocusCommand="{Binding WatermarkLostFocusCommand}"
                                        HintText="Username"
+                                       IsFocused="{Binding IsWaterMarkFocused}"
                                        Text="{Binding Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                       TextChangedCommand="{Binding WatermarkTextChangedCommand}" />
+                                       TextChangedCommand="{Binding WatermarkTextChangedCommand}">
+                <controls:WaterMarkTextBox.InputBindings>
+                    <KeyBinding Key="Enter" Command="{Binding WatermarkEnterKeyPressedCommand}" />
+                </controls:WaterMarkTextBox.InputBindings>
+            </controls:WaterMarkTextBox>
         </StackPanel>
         <StackPanel Width="280"
                     Margin="0,20,30,0"
@@ -38,26 +49,33 @@
                        Source="{DynamicResource PasswordLockImage}"
                        Style="{DynamicResource LoginImageStyle}" />
                 <PasswordBox Width="250"
+                             ap:FocusExtension.IsFocused="{Binding IsPasswordBoxFocused}"
                              ap:PasswordBoxAssistant.BindPassword="True"
                              ap:PasswordBoxAssistant.BoundPassword="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             b:LostFocusBehaviour.LostFocusCommand="{Binding PasswordBoxLostFocusCommand}"
                              Style="{DynamicResource WaterMarkPasswordBoxStyle}">
                     <behaviors:Interaction.Triggers>
                         <behaviors:EventTrigger EventName="PasswordChanged" SourceObject="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type PasswordBox}}}">
-                            <behaviors:InvokeCommandAction Command="{Binding PasswordChangedCommand}" />
+                            <behaviors:InvokeCommandAction Command="{Binding PasswordChangedCommand}" PassEventArgsToCommand="True" />
                         </behaviors:EventTrigger>
                     </behaviors:Interaction.Triggers>
+                    <PasswordBox.InputBindings>
+                        <KeyBinding Key="Enter" Command="{Binding PasswordEnterKeyPressedCommand}" />
+                    </PasswordBox.InputBindings>
                 </PasswordBox>
             </StackPanel>
             <TextBlock Margin="0,2,0,0"
                        HorizontalAlignment="Right"
                        VerticalAlignment="Center"
-                       Style="{DynamicResource UnderlineTextBlockStyle}"
                        b:MouseBehaviour.MouseDownCommand="{Binding ForgotPasswordMouseDownCommand}"
+                       Style="{DynamicResource UnderlineTextBlockStyle}"
                        Text="Forgot your password?" />
         </StackPanel>
         <Button Width="250"
                 Height="35"
                 Margin="0,20,0,0"
+                ap:FocusExtension.IsFocused="{Binding IsLoginButtonFocused}"
+                b:LostFocusBehaviour.LostFocusCommand="{Binding LoginButtonLostFocusCommand}"
                 Command="{Binding LoginButtonClickedCommand}"
                 Content="Login"
                 IsEnabled="{Binding IsLoginButtonEnabled}" />

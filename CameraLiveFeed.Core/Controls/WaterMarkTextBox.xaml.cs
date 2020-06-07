@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -32,6 +33,22 @@ namespace CameraLiveFeed.Core.Controls
             DependencyProperty.Register("HintText", typeof(string), typeof(WaterMarkTextBox),
                 new PropertyMetadata(string.Empty, new PropertyChangedCallback(HintTextPropertyChanged)));
 
+        public new bool IsFocused
+        {
+            get { return (bool)GetValue(IsFocusedProperty); }
+            set { SetValue(IsFocusedProperty, value); }
+        }
+        public new static readonly DependencyProperty IsFocusedProperty =
+            DependencyProperty.Register("IsFocused", typeof(bool), typeof(WaterMarkTextBox), new PropertyMetadata(false, new PropertyChangedCallback(OnIsFocusedChangedCallback)));
+
+        private static void OnIsFocusedChangedCallback(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if (d is WaterMarkTextBox waterMarkTextBox)
+            {
+                waterMarkTextBox.ChangeFocus((bool)e.NewValue);
+            }
+        }
+
         public ICommand TextChangedCommand
         {
             get { return (ICommand)GetValue(TextChangedCommandProperty); }
@@ -46,6 +63,16 @@ namespace CameraLiveFeed.Core.Controls
         public WaterMarkTextBox()
         {
             InitializeComponent();
+        }
+        #endregion
+
+        #region Methods
+        public void ChangeFocus(bool isFocused)
+        {
+            if (isFocused)
+            {
+                this.txtBox.Focus();
+            }
         }
         #endregion
 

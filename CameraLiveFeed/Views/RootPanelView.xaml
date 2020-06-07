@@ -22,7 +22,8 @@
                 VerticalAlignment="Bottom"
                 Background="Black"
                 DockPanel.Dock="Bottom">
-            <c:FooterView Copyright="Copyright 2020r." Margin="20,0,20,0"
+            <c:FooterView Margin="20,0,20,0"
+                          Copyright="Copyright 2020r."
                           PoweredBy="PoweredBy Griff Software"
                           Version="1.0v" />
         </Border>
