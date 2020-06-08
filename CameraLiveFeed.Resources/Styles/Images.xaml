@@ -4,5 +4,10 @@
     <BitmapImage x:Key="UserAvatarImage" UriSource="/CameraLiveFeed.Resources;component/Images/user.png" />
     <BitmapImage x:Key="PasswordLockImage" UriSource="/CameraLiveFeed.Resources;component/Images/password.png" />
     <BitmapImage x:Key="CopyrightImage" UriSource="/CameraLiveFeed.Resources;component/Images/copyright.png" />
+    
+    <!-- Left Panel Options -->
+    <BitmapImage x:Key="CameraImage" UriSource="/CameraLiveFeed.Resources;component/Images/camera.png" />
+    <BitmapImage x:Key="SettingsImage" UriSource="/CameraLiveFeed.Resources;component/Images/settings.png" />
+    <BitmapImage x:Key="SnapshotImage" UriSource="/CameraLiveFeed.Resources;component/Images/screenshot.png" />
 
 </ResourceDictionary>

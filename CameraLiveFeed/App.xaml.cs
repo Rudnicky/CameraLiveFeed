@@ -24,6 +24,7 @@ namespace CameraLiveFeed
             containerRegistry.RegisterForNavigation<MediaPlayerView>();
             containerRegistry.RegisterForNavigation<LoginView>();
             containerRegistry.RegisterForNavigation<RootPanelView>();
+            containerRegistry.RegisterForNavigation<LeftPanelView>();
         }
     }
 }

@@ -90,5 +90,14 @@
   <ItemGroup>
     <Resource Include="Images\copyright.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\camera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\screenshot.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

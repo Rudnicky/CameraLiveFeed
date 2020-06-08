@@ -68,6 +68,7 @@
       <DependentUpon>WaterMarkTextBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\InverseBooleanConverter.cs" />
+    <Compile Include="Models\Option.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\LoggerFactory\ILogger.cs" />
     <Compile Include="Services\LoggerFactory\Logger.cs" />
