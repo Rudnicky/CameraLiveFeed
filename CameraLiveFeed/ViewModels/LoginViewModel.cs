@@ -95,7 +95,18 @@ namespace CameraLiveFeed.ViewModels
         {
             IsWaterMarkFocused = false;
             IsPasswordBoxFocused = false;
-            IsLoginButtonFocused = true;
+
+            if (!string.IsNullOrWhiteSpace(Username) && !string.IsNullOrWhiteSpace(Password))
+            {
+                IsLoginButtonFocused = false;
+                IsLoginButtonEnabled = true;
+
+                NavigateToRootPanel();
+            } 
+            else
+            {
+                IsLoginButtonFocused = true;
+            }
         }
 
         private void PasswordBoxLostFocus()
@@ -119,6 +130,15 @@ namespace CameraLiveFeed.ViewModels
 
             IsBusy = true;
 
+            NavigateToRootPanel();
+
+            Logger.ProcessEnded(nameof(LoginButtonClickedAsync));
+
+            IsBusy = false;
+        }
+
+        private void NavigateToRootPanel()
+        {
             try
             {
                 RegionManager.RequestNavigate("ContentRegion", nameof(RootPanelView));
@@ -127,10 +147,6 @@ namespace CameraLiveFeed.ViewModels
             {
                 Logger.Error(ex);
             }
-
-            Logger.ProcessEnded(nameof(LoginButtonClickedAsync));
-
-            IsBusy = false;
         }
 
         private void LoginViewLoaded()
